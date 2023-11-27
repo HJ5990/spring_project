@@ -43,9 +43,8 @@ public class MemberServiceImpl implements MemberSerivce {
 	}
 
 	@Override
-	public int idCheck(String CheckId) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int idCheck(String checkId) {
+		return memberDao.idCheck(sqlSession, checkId);
 	}
 
 }

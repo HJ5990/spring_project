@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.kh.spring.board.model.dao.BoardDao;
 import com.kh.spring.board.model.vo.Board;
+import com.kh.spring.board.model.vo.Reply;
 import com.kh.spring.common.model.vo.PageInfo;
 
 
@@ -54,6 +55,23 @@ public class BoardServiceImpl implements BoardService{
 	public int updateBoard(Board b) {
 		return boardDao.updateBoard(sqlSession, b);
 	}
+
+	@Override
+	public ArrayList<Reply> selectReplyList(int bno) {
+		return boardDao.selectReplyList(sqlSession, bno);
+	}
+
+	@Override
+	public int insertReply(Reply r) {
+		return boardDao.insertReply(sqlSession, r);
+	}
+
+	@Override
+	public ArrayList<Board> selectTopBoardList() {
+		return boardDao.selectTopBoardList(sqlSession);
+	}
+	
+
 
 
 	

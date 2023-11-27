@@ -50,5 +50,14 @@
 	 -->
 	
 	
+	<!-- 인터셉터 생성 -->
+	<interceptors>
+		<interceptor>
+			<mapping path="/myPage.me"/>
+			<mapping path="/enrollForm.bo"/>
+			<beans:bean class="com.kh.spring.common.intercepter.Loginintercepter" id="Loginintercepter"/>
+		</interceptor>
+	</interceptors>
+	
 	
 </beans:beans>

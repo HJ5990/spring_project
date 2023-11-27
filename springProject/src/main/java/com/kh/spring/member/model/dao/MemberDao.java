@@ -24,5 +24,9 @@ public class MemberDao {
 		return sqlSession.update("memberMapper.daleteMember", userId);
 	}
 	
+	public int idCheck(SqlSessionTemplate sqlSession, String checkId) {
+		return sqlSession.selectOne("memberMapper.idCheck", checkId);
+	}
+	
 
 }

@@ -14,6 +14,19 @@
  		<result column="COUNT" property="count" />
  		<result column="CREATE_DATE" property="createDate" />
  	</resultMap>
+ 	
+ 	<resultMap type="Reply" id="replyResult">
+ 		<result column="REPLY_NO" property="replyNo" />
+ 		<result column="REPLY_CONTENT" property="replyContent" />
+ 		<result column="REF_BNO" property="refBno" />
+ 		<result column="REPLY_WRITER" property="replyWriter" />
+ 		<result column="CREATE_DATE" property="createDate" />
+ 		<result column="STATUS" property="status" />
+ 	</resultMap>
+ 	
+ 	
+ 	
+ 	
  
  	<!-- 게시글의 총 갯수 조회하는 쿼리문 -->
  	<select id="selectListCount" resultType="_int">
@@ -95,6 +108,50 @@
  				CHANGE_NAME = #{changeName}
  		WHERE BOARD_NO = #{boardNo}
  	</update>
+ 	
+ 	<!-- 댓글 불러오는 쿼리문 -->
+ 	<select id="selectReplyList" resultMap="replyResult">
+ 		SELECT REPLY_NO,
+				REPLY_CONTENT,
+				REPLY_WRITER,
+				TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE
+		FROM REPLY
+		WHERE STATUS = 'Y'
+			AND REF_BNO = #{bno}
+		ORDER BY REPLY_NO DESC
+ 	</select>
+ 	
+ 	<!-- 댓글 추가하는 쿼리문 -->
+ 	<insert id="insertReply">
+ 		INSERT 
+ 		  INTO REPLY(
+ 		  			 REPLY_NO,
+ 		  			 REPLY_CONTENT,
+ 		  			 REF_BNO,
+ 		  			 REPLY_WRITER
+ 		  			)
+ 		  VALUES(
+ 		  	     SEQ_RNO.NEXTVAL,
+ 		  	     #{replyContent},
+ 		  	     #{refBno},
+ 		  	     #{replyWriter}
+ 		        )
+ 	</insert>
+ 	
+ 	<!-- TOP5 게시글 조회 -->
+ 	<select id="selectTopBoardList" resultMap="boardResult">
+ 		SELECT *
+		FROM(SELECT BOARD_NO,
+		            BOARD_TITLE,
+		            BOARD_WRITER,
+		            COUNT,
+		            TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') AS CREATE_DATE,
+		            ORIGIN_NAME	
+				FROM BOARD
+				WHERE STATUS = 'Y'
+		        ORDER BY COUNT DESC)
+		WHERE ROWNUM BETWEEN 1 AND 5
+ 	</select>
  	
  	
  	
