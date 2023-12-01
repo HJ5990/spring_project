@@ -44,6 +44,7 @@
 		padding-bottom: 7px;
 	}
 	.communityList-area1-li li:hover{
+		cursor: pointer;
 		background-color: rgba(112, 112, 112, 0.177);
 	}
 	.communityList-area1-title{

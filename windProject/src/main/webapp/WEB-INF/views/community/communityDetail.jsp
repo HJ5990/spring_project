@@ -38,8 +38,6 @@
 	}
 	.communityList-area1-li li{
 		padding-left: 80px;
-		/* margin-top: 7px;
-		margin-bottom: 7px; */
 		padding-top: 7px;
 		padding-bottom: 7px;
 	}

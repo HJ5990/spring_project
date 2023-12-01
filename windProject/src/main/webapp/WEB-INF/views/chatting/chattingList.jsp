@@ -20,7 +20,7 @@
 
     .chattingList-area0{
         border-right: 1px solid rgba(112, 112, 112, 0.177);
-        width: 400px;
+        width: 350px;
         overflow-y: scroll;
     }
     .chattingList-area0::-webkit-scrollbar{
@@ -195,22 +195,7 @@
     }
 
 
-
- 
-
-
-
-
-    /* 조직도 부분 */
-    .screen_full{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-    .screen_left{
-        width: 400px;
-        float: left;
-    }
+    /* 조직도 ~ 조직도 상단 부분 */
    .screen_leftUp{
         display: flex;
         justify-content: center;
@@ -218,10 +203,7 @@
         height: 100px;
         border-bottom: 1px solid rgba(112, 112, 112, 0.177);
    }
-    .screen_leftDown{
-        height: calc(100vh - 160px);
-        padding: 20px 50px;
-    }
+
     .profileImgCircle{
         margin-right: 30px;
     }
@@ -244,58 +226,78 @@
         border-radius: 50%;
 
     }
-    .leftDown_One{
-        margin-top: 7px;
-        margin-bottom: 7px;
+
+
+
+
+    /* 조직도 하단 관련 */
+
+    .screen_leftDown{
+        padding: 30px 50px;
+        
     }
-    .leftDown_Two{
-        margin-top: 7px;
-        margin-bottom: 7px;
-        margin-left: 30px;
+    .org-container {
+        list-style: none;
+        padding: 0;
     }
-    .leftDown_Three{
-        margin-top: 7px;
-        margin-bottom: 7px;
-        margin-left: 60px;
+    .org-title {
+        padding: 6px 0;
+    }
+    .org-title2{
+        padding-left: 30px;
+    }
+    .org-content {
+        display: none;
+    }
+    .org-toggle{
+        background-color: #808080;
+        color: white;
+        width: 16px;
+        height: 16px;
+        display : flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+        margin-right: 8px;
+    }
+    .org-oneline{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .member-area{
         display: flex;
         align-items: center;
+        font-size: 15px;
+        margin-left: 50px;
+        padding: 4px 14px;
+
     }
-    .leftDown_Three_Circle{
+    .member-area:hover{
+        cursor: pointer;
+        background-color: rgba(160, 159, 159, 0.177);;
+    }
+    .circle{
         width: 8px;
         height: 8px;
         background-color: red;
         border-radius: 50%;
+        margin-right: 8px;
     }
-    .leftDown_Three_Name{
-        margin-left: 7px;
+    .member-name{
+        margin-right: 8px;
     }
-
-
-
-
-
-/* gpt 테스트*/
-
-.org-container {
-      list-style: none;
-      padding: 0;
+    .member-checkbox{
+        margin-left: auto;
+        accent-color: rgb(85, 175, 130);
     }
 
-    .org-item {
-      margin-bottom: 8px;
+    .member-checkbox:checked{
+
+        color:white;
     }
-
-    .org-title {
-      cursor: pointer;
-      padding: 8px;
-      background-color: #f1f1f1;
-    }
-
-    .org-content {
-      display: none;
-    }
-
-
 
 
 </style>
@@ -307,106 +309,67 @@
         <!-- 조직도 부분 -->
         <div class="chattingList-area0">
 
-            <div class="screen_full">
-                <div class="screen_left">
-
-                    <!-- 상단 프로필 -->
-                    <div class="screen_leftUp">
-                        <div class="profileImgCircle">
-                            <div class="profileImg">
-                                
-                            </div>
-                        </div>
-                        <div class="profileName">
-                            <div style="font-weight: 600;">김영업</div>
-                            <div>영업1팀·사원</div>
-                        </div>
-                        <div class="profileStatus"></div>
-                        <div class="profileCheckbox">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
-                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                            </svg>
-                        </div>    
-                    </div>
-
-                    <!-- 하단 조직도 -->
-                    <div class="screen_leftDown">
-                        <div class="leftDown_One">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="grey" class="bi bi-plus-square-fill" viewBox="0 0 16 16" onclick="">
-                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
-                            </svg> KH강남
-                            <div class="leftDown_Two">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="grey" class="bi bi-plus-square-fill" viewBox="0 0 16 16" onclick="">
-                                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
-                                </svg>영업1팀
-                            </div>
-                            <div class="leftDown_Three">
-                                <div class="leftDown_Three_Circle"></div><div class="leftDown_Three_Name">나차장</div>
-                            </div>
-                        </div>
-                        <div class="leftDown_One">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="grey" class="bi bi-plus-square-fill" viewBox="0 0 16 16" onclick="">
-                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
-                            </svg> KH종로
-                        </div> 
-                    
 
 
+            <!-- 상단 프로필 -->
+            <div class="screen_leftUp">
+                <div class="profileImgCircle">
+                    <div class="profileImg"></div>
+                </div>
+                <div class="profileName">
+                    <div style="font-weight: 600;">김영업</div>
+                    <div>영업1팀·사원</div>
+                </div>
+                <div class="profileStatus"></div>
+                <div class="profileCheckbox">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                    </svg>
+                </div>    
+            </div>
 
-                            <!-- pgt 테스트 -->
-                        <ul class="org-container">
-                            <li class="org-item">
-                                <div class="org-title">본부</div>
+            <!-- 하단 조직도 -->
+            <div class="screen_leftDown">
+                <ul class="org-container">
+                    <li class="org-item"><div class="org-oneline org-title"><div class="org-toggle">&#43;</div><div>송파점</div></div>
+                        <ul class="org-content">
+                            <li class="org-item"><div class="org-oneline org-title org-title2"><div class="org-toggle">&#43;</div><div>영업팀</div></div>
                                 <ul class="org-content">
-                                <li class="org-item">
-                                    <div class="org-title">영업팀</div>
-                                    <ul class="org-content">
-                                    <li class="org-item">
-                                        <div class="org-title">김가가 사원</div>   
+                                    <li>
+                                        <label class="org-item member-area">
+                                            <div class="circle"></div>
+                                            <div class="member-name">김가가</div>
+                                            <div>과장</div>
+                                            <input class="member-checkbox" type="checkbox">
+                                        </label>
                                     </li>
-                                    </ul>
-                                </li>
+                                    <li class="org-item member-area"><div class="circle"></div><div class="member-name">김가가</div><div>대리</div></li>
+                                    <li class="org-item member-area"><div class="circle"></div><div class="member-name">김가가</div><div>사원</div></li>
                                 </ul>
-                            </li>
-                        </ul>   
-
-
-
-
-
-                        <ul class="org-container">
-                            <li class="org-item">
-                                <div class="org-title">송파점</div>
-                                <ul class="org-content">
-                                    <li class="org-item">
-                                        <div class="org-title">영업팀</div>
-                                        <ul class="org-content">
-                                            <li class="org-item">김가가 사원</li>
-                                            <li class="org-item">김가가 사원</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>   
-
-
-                        <ul>
-                            <li>1번
                             </li>
                         </ul>
+                    </li>
 
+                </ul>
 
-                    
-
-                    </div>
-
-
-
-
-
-
-                </div>
             </div>
+
+
+            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+            <script>
+                $(document).ready(function() {
+                    $('.org-title').click(function() {
+                        $('.org-title').css({"pointer-events": "none"})
+                        $(this).next('.org-content').slideToggle(200, function(){
+                            $('.org-title').css({"pointer-events": "auto"})
+                        });
+                    });
+                });
+            </script>
+
+            
+
+
         </div>
 
         <!-- 리스트부분 -->
@@ -581,13 +544,6 @@
 
 
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('.org-title').click(function() {
-                $(this).next('.org-content').slideToggle();
-            });
-        });
-    </script>
+
 </body>
 </html>
