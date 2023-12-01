@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:forward page="chatting/chattingList.jsp"/>
-
+	메인입니다
 </body>
 </html>

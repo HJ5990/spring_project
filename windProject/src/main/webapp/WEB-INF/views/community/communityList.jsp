@@ -16,6 +16,7 @@
 	}
 	.communityList-area2{
 		flex: 1;
+		overflow-y: auto;
 	}
 	.communityList-area3{
 		display: flex;
@@ -118,13 +119,10 @@
 		width: 55px;
 		height: 20px;
 		font-size: 10px;
-		
 		align-items: end;
 	}
 	.communityList-area3-li li{
 		padding-left: 60px;
-		/* margin-top: 7px;
-		margin-bottom: 7px; */
 		padding-top: 6px;
 		padding-bottom: 6px;
 		font-size: 14px;
@@ -139,14 +137,14 @@
 		margin-bottom: 30px;
 	}
 	.communityList-area2-container{
-		height: 200px;
-		border: 1px solid black;
+		height: 150px;
+		border-bottom: 1px solid rgba(112, 112, 112, 0.177);
 		display: flex;
-		justify-content: space-between
+		justify-content: space-between;
 	}
 	.communityList-area2-container-content{
 		flex: 1;
-		padding: 30px 40px;
+		padding: 15px 45px;
 	}
 	.communityList-area2-container-like{
 		margin-top: 40px;
@@ -165,16 +163,69 @@
 	}
 	.communityList-area2-container-content-title{
 		flex: 1;
+		display: flex;
+		align-items: center;
 	}
+	.communityList-area2-container-content-title1{
+		font-weight: bold;
+		font-size: 18px;
+		margin-right: 18px;
+	}
+	.communityList-area2-container-content-title2{
+		margin-right: 10px;
+	}
+
 	.communityList-area2-container-content-content{
 		flex: 1;
+		display: flex;
+		align-items: center;
+
+
 	}
 	.communityList-area2-container-content-profile{
 		flex: 1;
 	}
+	.communityList-area2-container-content-profile-image{
+		display: flex;
+		align-items: center;
+		margin-right: 14px;
+		font-size: 14px;
+	}
+	.communityList-area2-container-content-profile-name{
+		display: flex;
+		align-items: center;
+		margin-right: 14px;
+		font-size: 14px;
+	}
+	.communityList-area2-container-content-profile-date{
+		display: flex;
+		align-items: center;
+		font-size: 12px;
+		color: gray;
+	}
+
+	.communityList-area2-container-pagebar-area{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: auto;
+		height: 120px;
+		
+	}
+	.communityList-area2-container-pagebar{
+		height: 120px;
+		position: fixed;
+      	bottom: 0;
+		display: flex;
+		align-items: center;
+	}
+
+
+
+
+
+
 </style>
-
-
 
 </head>
 <body>
@@ -196,21 +247,121 @@
 
 
 		<div class="communityList-area2">
-			<div class="communityList-area2-container">
-				<div class="communityList-area2-container-content">
-					<div class="communityList-area2-container-content-title">제목</div>
-					<div class="communityList-area2-container-content-content">내용</div>
-					<div class="communityList-area2-container-content-profile">
-						<div>사진</div>
-						<div>이름</div>
-						<div>날짜</div>
+			<div class="communityList-container-box">
+				<div class="communityList-area2-container">
+					<div class="communityList-area2-container-content">
+						<div class="communityList-area2-container-content-title">
+							<div class="communityList-area2-container-content-title1">제목입니다</div>
+							<div class="communityList-area2-container-content-title2">댓글</div>
+							<div class="communityList-area2-container-content-title3">5</div>
+						</div>
+						<div class="communityList-area2-container-content-content">내용입니다</div>
+						<div class="communityList-area2-container-content-profile">
+							<div class="communityList-area2-container-content-profile-image">사진</div>
+							<div class="communityList-area2-container-content-profile-name">이사원</div>
+							<div class="communityList-area2-container-content-profile-date">2023-11-28</div>
+						</div>
+					</div>
+					<div class="communityList-area2-container-like">
+						<div>하트</div>
+						<div>5</div>
 					</div>
 				</div>
-				<div class="communityList-area2-container-like">
-					<div>하트</div>
-					<div>5</div>
+				<div class="communityList-area2-container">
+					<div class="communityList-area2-container-content">
+						<div class="communityList-area2-container-content-title">
+							<div class="communityList-area2-container-content-title1">제목입니다</div>
+							<div class="communityList-area2-container-content-title2">댓글</div>
+							<div class="communityList-area2-container-content-title3">5</div>
+						</div>
+						<div class="communityList-area2-container-content-content">내용입니다</div>
+						<div class="communityList-area2-container-content-profile">
+							<div class="communityList-area2-container-content-profile-image">사진</div>
+							<div class="communityList-area2-container-content-profile-name">이사원</div>
+							<div class="communityList-area2-container-content-profile-date">2023-11-28</div>
+						</div>
+					</div>
+					<div class="communityList-area2-container-like">
+						<div>하트</div>
+						<div>5</div>
+					</div>
+				</div>
+				<div class="communityList-area2-container">
+					<div class="communityList-area2-container-content">
+						<div class="communityList-area2-container-content-title">
+							<div class="communityList-area2-container-content-title1">제목입니다</div>
+							<div class="communityList-area2-container-content-title2">댓글</div>
+							<div class="communityList-area2-container-content-title3">5</div>
+						</div>
+						<div class="communityList-area2-container-content-content">내용입니다</div>
+						<div class="communityList-area2-container-content-profile">
+							<div class="communityList-area2-container-content-profile-image">사진</div>
+							<div class="communityList-area2-container-content-profile-name">이사원</div>
+							<div class="communityList-area2-container-content-profile-date">2023-11-28</div>
+						</div>
+					</div>
+					<div class="communityList-area2-container-like">
+						<div>하트</div>
+						<div>5</div>
+					</div>
+				</div>
+				<div class="communityList-area2-container">
+					<div class="communityList-area2-container-content">
+						<div class="communityList-area2-container-content-title">
+							<div class="communityList-area2-container-content-title1">제목입니다</div>
+							<div class="communityList-area2-container-content-title2">댓글</div>
+							<div class="communityList-area2-container-content-title3">5</div>
+						</div>
+						<div class="communityList-area2-container-content-content">내용입니다</div>
+						<div class="communityList-area2-container-content-profile">
+							<div class="communityList-area2-container-content-profile-image">사진</div>
+							<div class="communityList-area2-container-content-profile-name">이사원</div>
+							<div class="communityList-area2-container-content-profile-date">2023-11-28</div>
+						</div>
+					</div>
+					<div class="communityList-area2-container-like">
+						<div>하트</div>
+						<div>5</div>
+					</div>
+				</div>
+				<div class="communityList-area2-container">
+					<div class="communityList-area2-container-content">
+						<div class="communityList-area2-container-content-title">
+							<div class="communityList-area2-container-content-title1">제목입니다</div>
+							<div class="communityList-area2-container-content-title2">댓글</div>
+							<div class="communityList-area2-container-content-title3">5</div>
+						</div>
+						<div class="communityList-area2-container-content-content">내용입니다</div>
+						<div class="communityList-area2-container-content-profile">
+							<div class="communityList-area2-container-content-profile-image">사진</div>
+							<div class="communityList-area2-container-content-profile-name">이사원</div>
+							<div class="communityList-area2-container-content-profile-date">2023-11-28</div>
+						</div>
+					</div>
+					<div class="communityList-area2-container-like">
+						<div>하트</div>
+						<div>5</div>
+					</div>
 				</div>
 			</div>
+			
+			<!-- 페이징바 -->
+			<div class="communityList-area2-container-pagebar-area">
+				<div class="communityList-area2-container-pagebar">
+					<!-- 페이지네이션 -->
+					<div class="personManage_footer">
+						<ul class="pagination">
+							<li class="page-item disabled"><a class="page-link" href="#"><</a></li>
+							<li class="page-item"><a class="page-link" href="#">1</a></li>
+							<li class="page-item"><a class="page-link" href="#">2</a></li>
+							<li class="page-item"><a class="page-link" href="#">3</a></li>
+							<li class="page-item"><a class="page-link" href="#">></a></li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+			
 		</div>
 
 
